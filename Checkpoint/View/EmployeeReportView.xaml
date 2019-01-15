@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="Checkpoint.View.EmployeeReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="16" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Relatório de Funcionários</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="70*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Empresa:</TextBlock>
+                    <ComboBox  Grid.Column="2" Grid.Row="0" x:Name="CBCompany" materialDesign:HintAssist.Hint="Empresa"/>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="35*"/>
+                        <ColumnDefinition Width="65*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 12 0 12" Style="{StaticResource MaterialDesignBody2TextBlock}">Departamento:</TextBlock>
+                    <ComboBox  Grid.Column="1" Grid.Row="0" x:Name="CBDepartment" materialDesign:HintAssist.Hint="Departamento"/>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="70*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Margin="0 12 0 12" Style="{StaticResource MaterialDesignBody2TextBlock}">Cargo:</TextBlock>
+                    <ComboBox  Grid.Column="1" Grid.Row="0" x:Name="CBOffice" materialDesign:HintAssist.Hint="Cargo"/>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Button HorizontalAlignment="Right" Name="BTCharge" Background="#4682B4" Width="100" ToolTip="Carregar Horário" BorderThickness="0" Click="loadDailyMarking">Carregar</Button>
+                </Grid>
+            </Grid>
+            <Separator Grid.Row="1"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="98*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Grid.Column="1" x:Name="GDEmployee" IsReadOnly="true" Margin="0 0 0 0" ItemsSource="{Binding employeeList}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False" CanUserDeleteRows="False"
+                      materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="2">
+                        <DataGrid.Columns>
+                            <materialDesign:MaterialDataGridTextColumn Width="20*" Binding="{Binding employeeName}" Header="Nome" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding pisPasep}" Header="PIS/PASEP" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding leefNumber}" Header="Nº Folha" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding company}" Header="Empresa" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding schedule}" Header="Horário" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding ctps}" Header="CTPS" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding department}" Header="Departamento" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding office}" Header="Cargo" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                            <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding admission, StringFormat=\{0:dd/MM/yyyy\}}" Header="Admissão" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Grid.Column="1" Grid.Row="1" Name="BTSave" Background="#3CB371" Width="200" ToolTip="Salvar Modificações" BorderThickness="0" HorizontalAlignment="Right" Margin="0" IsEnabled="False">Imprimir</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

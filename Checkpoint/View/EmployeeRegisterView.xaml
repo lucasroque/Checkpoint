@@ -1,0 +1,299 @@
+﻿<UserControl x:Class="Checkpoint.View.EmployeeRegisterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:local="clr-namespace:Checkpoint.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="16" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Cadastro de Funcionários</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel>
+                        <Expander HorizontalAlignment="Stretch" Header="Foto">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100*"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Column="0" Grid.Row="0" BorderBrush="#D3D3D3" Height="100" CornerRadius="8,8,8,8" BorderThickness="3">
+                                    <Image Name="imgEmployeePhoto" Stretch="Fill"/>
+                                </Border>
+                                <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="btLoadPhoto" Background="#4682B4" Margin="6,0,0,0" BorderThickness="0" Content="{materialDesign:PackIcon Kind=Image}" ToolTip="Carregar Foto" Click="loadPhoto"/>
+                            </Grid>
+                        </Expander>
+                        <Expander HorizontalAlignment="Stretch" Header="Dados Principais" IsExpanded="True">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="70*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Nome:</TextBlock>
+                                <TextBox Grid.Column="2" Grid.Row="0" x:Name="TBName" materialDesign:HintAssist.Hint="Nome do Funcionário">
+                                    <Binding Path="TBName" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Pis/Pasep:</TextBlock>
+                                <TextBox Grid.Column="2" Grid.Row="1" x:Name="TBPispasep" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Número do Pis/Pasep">
+                                    <Binding Path="TBPispasep" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Número da Folha:</TextBlock>
+                                <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBLeefNumber" MaxLength="8" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Número da Folha do Funcionário">
+                                    <Binding Path="TBLeefNumber" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True"/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox>
+                                <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Empresa:</TextBlock>
+                                <ComboBox  Grid.Column="2" Grid.Row="3" x:Name="CBCompany" materialDesign:HintAssist.Hint="Nome da Empresa">
+                                    <ComboBox.SelectedIndex>
+                                        <Binding Path="CBCompany" UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </ComboBox.SelectedIndex>
+                                </ComboBox>
+                                <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Horário:</TextBlock>
+                                <ComboBox  Grid.Column="2" Grid.Row="4" x:Name="CBSchedule" materialDesign:HintAssist.Hint="Horário de Trabalho">
+                                    <ComboBox.SelectedIndex>
+                                        <Binding Path="CBSchedule" UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </ComboBox.SelectedIndex>
+                                </ComboBox>
+                                <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">Data Admissão:</TextBlock>
+                                <DatePicker Grid.Column="2" Grid.Row="5" Language="PT-br" x:Name="DPAdmission" HorizontalAlignment="Left" Margin="0 10 0 10" materialDesign:HintAssist.Hint="Data de Admissão" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" >
+                                    <DatePicker.SelectedDate>
+                                        <Binding Path="DPAdmission" UpdateSourceTrigger="PropertyChanged">
+                                            <Binding.ValidationRules>
+                                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </DatePicker.SelectedDate>
+                                </DatePicker>
+                            </Grid>
+                        </Expander>
+                        <Expander HorizontalAlignment="Stretch" Header="Dados Adicionais">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="65*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="10*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">CTPS:</TextBlock>
+                                <TextBox Grid.Column="2" Grid.Row="0" x:Name="TBCtps" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Carteira de Trabalho e Previdencia Social"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">Departamento:</TextBlock>
+                                <ComboBox  Grid.Column="2" Grid.Row="1" x:Name="CBDepartment" materialDesign:HintAssist.Hint="Departamento"/>
+                                <Button Grid.Column="4" Grid.Row="1" Name="btNewDepartment" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Plus}" ToolTip="Novo Departamento" Click="showNewDepartmentModal"/>
+                                <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">Cargo:</TextBlock>
+                                <ComboBox  Grid.Column="2" Grid.Row="2" x:Name="CBOffice" materialDesign:HintAssist.Hint="Cargo"/>
+                                <Button Grid.Column="4" Grid.Row="2" Name="btNewOffice" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Plus}" ToolTip="Novo Cargo" Click="showNewOfficeModal"/>
+                                <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">Data Demissão:</TextBlock>
+                                <DatePicker Grid.Column="2" Grid.Row="3" Language="PT-br" x:Name="DPResignation" HorizontalAlignment="Left" Margin="0 10 0 10" materialDesign:HintAssist.Hint="Data de Demissão" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                                <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 10 0 10">Motivo Demissão:</TextBlock>
+                                <ComboBox  Grid.Column="2" Grid.Row="4" x:Name="CBResignationReason" materialDesign:HintAssist.Hint="Motivo de Demissão"/>
+                                <Button Grid.Column="4" Grid.Row="4" Name="btResignationReason" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Plus}" ToolTip="Novo Motivo de Demissão" Click="showNewRReasonModal"/>
+                            </Grid>
+                        </Expander>
+                        <Expander HorizontalAlignment="Stretch" Header="Dados Pessoais">
+                            <Grid>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="70*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Telefone:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="0" x:Name="TBPhone" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="">
+                                        <Binding Path="TBPhone" UpdateSourceTrigger="PropertyChanged"/>
+                                    </TextBox>
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Email:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="1" x:Name="TBEmail" materialDesign:HintAssist.Hint="."/>
+                                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">RG:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBGenegalRegister" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Orgão Expeditor:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="3" x:Name="TBRegisterEntity" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Pai:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="4" x:Name="TBFather" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Mãe:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="5" x:Name="TBMother" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Data Nascimento:</TextBlock>
+                                    <DatePicker Grid.Column="2" Language="PT-br" Grid.Row="6" x:Name="DPBirth" HorizontalAlignment="Left" Margin="0 8 0 8" materialDesign:HintAssist.Hint="Data de Nascimento" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                                    <TextBlock Grid.Column="0" Grid.Row="7" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Género:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="7" x:Name="TBGender" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="8" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Estado Civíl:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="8" x:Name="TBCivilStatus" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="9" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Nacionalidade:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="9" x:Name="TBNacionality" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="10" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Naturalidade:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="10" x:Name="TBNaturalness" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="11" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Endereço:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="11" x:Name="TBAddress" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="12" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Bairro:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="12" x:Name="TBNeighborhood" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="13" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Cidade:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="13" x:Name="TBCity" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="14" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Estado:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="14" x:Name="TBState" materialDesign:HintAssist.Hint=""/>
+                                    <TextBlock Grid.Column="0" Grid.Row="15" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">CEP:</TextBlock>
+                                    <TextBox Grid.Column="2" Grid.Row="15" x:Name="TBZipCode" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="">
+                                        <Binding Path="TBZipCode" UpdateSourceTrigger="PropertyChanged"/>
+                                    </TextBox>
+
+                                </Grid>
+                            </Grid>
+                        </Expander>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Name="BTSave" Background="#3CB371" Margin="0 12 8 0" Width="100" ToolTip="Salvar Empresa" BorderThickness="0" Click="upsertEmployee">
+                        SALVAR
+                    </Button>
+                    <Button Grid.Column="1" Name="BTEdit" IsEnabled="False" Background="#4682B4" Margin="0 12 8 0" Width="100" ToolTip="Alterar Empresa" BorderThickness="0" Click="upsertEmployee">
+                        ALTERAR
+                    </Button>
+                    <Button Grid.Column="2" Name="BTClean" Background="#FF4500" Margin="0 12 8 0" Width="100" ToolTip="Limpar Campos" BorderThickness="0" Click="cleanControls">
+                        LIMPAR
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Expander HorizontalAlignment="Stretch" Header="Lista de Funcionários">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Grid.Row="0" x:Name="TBFilter" Text="{Binding TBFilter, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 0 0" materialDesign:HintAssist.Hint="Filtro"  Style="{StaticResource MaterialDesignTextAreaTextBox}" />
+                        </Grid>
+                        <DataGrid Grid.Row="1" x:Name="GDEmployee" IsReadOnly="true" Margin="0 25 0 0" ItemsSource="{Binding EmployeeList}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                                  materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="2" >
+                            <DataGrid.Columns>
+                                <materialDesign:MaterialDataGridTextColumn Width="18*" Binding="{Binding employeeName}" Header="Nome" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}" />
+                                <materialDesign:MaterialDataGridTextColumn Width="17*" Binding="{Binding pisPasep}" Header="PIS/PASEP" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="8*" Binding="{Binding leefNumber}" Header="Nº Folha" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="15*" Binding="{Binding company}" Header="Empresa" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="14*" Binding="{Binding schedule}" Header="Horário" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="13*" Binding="{Binding admission, StringFormat=\{0:dd/MM/yyyy\}}" Header="Admissão" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <DataGridTemplateColumn Width="9*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btEdit" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Pencil}" ToolTip="Editar" Click="loadEmployee"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Width="9*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btDelete" Background="#C10828" BorderThickness="0" Content="{materialDesign:PackIcon Delete}" ToolTip="Excluir" Click="deleteEmployee"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

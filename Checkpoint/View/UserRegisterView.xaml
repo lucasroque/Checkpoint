@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="Checkpoint.View.UserRegisterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="16" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Cadastro de Usuário</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Perfil de Usuário:</TextBlock>
+                    <ComboBox  Grid.Column="2" Grid.Row="0" x:Name="CBUserProfile" materialDesign:HintAssist.Hint="Perfil de Usuário">
+                        <ComboBox.SelectedIndex>
+                            <Binding Path="CBUserProfile" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </ComboBox.SelectedIndex>
+                    </ComboBox>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Login:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="1" x:Name="TBLogin" materialDesign:HintAssist.Hint="Login">
+                        <Binding Path="TBLogin" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Senha:</TextBlock>
+                    <PasswordBox Grid.Column="2" Grid.Row="2" x:Name="TBPassword" materialDesign:HintAssist.Hint="Senha">
+                    </PasswordBox>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 14 0 14">Validade:</TextBlock>
+                    <DatePicker Grid.Column="2" Grid.Row="3" Language="PT-br" x:Name="DPValidity" HorizontalAlignment="Left" Margin="0 14 0 14" materialDesign:HintAssist.Hint="Validade" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Status:</TextBlock>
+                    <CheckBox Grid.Column="2" Grid.Row="4" Margin="0 8 0 8" Name="CXActive">Ativo</CheckBox>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Name="BTSave" Background="#3CB371" Margin="0 12 8 0" Width="100" ToolTip="Salvar Usuário" BorderThickness="0" Click="upsertUser">
+                        SALVAR
+                    </Button>
+                    <Button Grid.Column="1" Name="BTEdit" IsEnabled="False" Background="#4682B4" Margin="0 12 8 0" Width="100" ToolTip="Alterar Usuário" BorderThickness="0" Click="upsertUser">
+                        ALTERAR
+                    </Button>
+                    <Button Grid.Column="2" Name="BTClean" Background="#FF4500" Margin="0 12 8 0" Width="100" ToolTip="Limpar Campos" BorderThickness="0" Click="cleanControls">
+                        LIMPAR
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Expander HorizontalAlignment="Stretch" Header="Lista de Usuários">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Grid.Row="0" x:Name="TBFilter" Text="{Binding TBFilter, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 0 0" materialDesign:HintAssist.Hint="Filtro"  Style="{StaticResource MaterialDesignTextAreaTextBox}" />
+                        </Grid>
+                        <DataGrid Grid.Row="1" x:Name="GDUser" IsReadOnly="true" Margin="0 25 0 0" ItemsSource="{Binding UserList}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                              materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="2" >
+                            <DataGrid.Columns>
+                                <materialDesign:MaterialDataGridTextColumn Width="25*" Binding="{Binding userProfile}" Header="Perfil de Usuário" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="25*" Binding="{Binding login}" Header="Login" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="25*" Binding="{Binding validity, StringFormat=\{0:dd/MM/yyyy\}}" Header="Validade" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <DataGridCheckBoxColumn Width="25*" Header="Ativo" Binding="{Binding active, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    <DataGridCheckBoxColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                                            <Setter Property="HorizontalAlignment" Value="Left" />
+                                        </Style>
+                                    </DataGridCheckBoxColumn.CellStyle>
+                                </DataGridCheckBoxColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btEdit" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Pencil}" ToolTip="Editar" Click="loadUser"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btDelete" Background="#C10828" BorderThickness="0" Content="{materialDesign:PackIcon Delete}" ToolTip="Excluir" Click="deleteUser"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

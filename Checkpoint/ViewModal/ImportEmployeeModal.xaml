@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Checkpoint.ViewModal.ImportEmployeeModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.ViewModal"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="600" Height="230"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid Margin="5" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:DialogHost Grid.Row="0" Name="DHModal" Identifier="DHModal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        </materialDesign:DialogHost>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="12" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 0 0">Importar Empregados</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="White" Margin="0 1 0 0" MaxHeight="30" CornerRadius="3" BorderThickness="2" BorderBrush="#DCDCDC">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="1" Margin="5 0 0 0" materialDesign:HintAssist.Hint="Caminho" x:Name="TBPath" IsEnabled="False" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+            <Button Grid.Column="1" Name="BTSearch" Background="#4682B4" Margin="5 5 0 5" ToolTip="Buscar" VerticalAlignment="Center" BorderThickness="0" Click="loadEmployeeFile" >Buscar</Button>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="CBCompany" Grid.Column="0" Margin="5 0 5 0" materialDesign:HintAssist.Hint="Empresa" Background="White">
+                <ComboBox.SelectedIndex>
+                    <Binding Path="CBCompany" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ComboBox.SelectedIndex>
+            </ComboBox>
+            <ComboBox x:Name="CBSchedule" Grid.Column="2" Margin="5 0 5 0" materialDesign:HintAssist.Hint="Horário" Background="White">
+                <ComboBox.SelectedIndex>
+                    <Binding Path="CBSchedule" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ComboBox.SelectedIndex>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <ProgressBar Name="PBImport" Orientation="Horizontal" Height="10" IsIndeterminate="False"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="BTImport" Background="#3CB371" Margin="0 12 8 0" Width="100" ToolTip="Importar" BorderThickness="0" Click="importEmployee">Importar</Button>
+            <Button Grid.Column="1" Name="BTCancel" Background="#C10828" Margin="0 12 8 0" Width="100" ToolTip="Cancelar" BorderThickness="0" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Sair
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

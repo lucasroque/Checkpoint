@@ -1,0 +1,141 @@
+﻿ <UserControl x:Class="Checkpoint.ViewModal.SyncModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="600" Height="350"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid Margin="16" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:DialogHost Grid.Row="0" Name="DHModal" Identifier="DHModal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        </materialDesign:DialogHost>
+        <Grid Grid.Row="1">
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="12" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Sincronismo</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="#DCDCDC" CornerRadius="3" Margin="5 5 5 5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Column="0" Background="White" Margin="5 5 5 5" CornerRadius="3" BorderThickness="2" BorderBrush="White">
+                            <Grid>
+                                <TabControl>
+                                    <TabItem Header="Enviar">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="20*"/>
+                                                <RowDefinition Height="20*"/>
+                                                <RowDefinition Height="60*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15*"/>
+                                                    <ColumnDefinition Width="85*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="8 12 0 0">Empresa:</TextBlock>
+                                                <ComboBox  Grid.Column="1" Grid.Row="0" x:Name="CBCompanySend" materialDesign:HintAssist.Hint="Empresa" SelectionChanged="CBCompanySend_SelectionChanged" Margin="8 0 12 0"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15*"/>
+                                                    <ColumnDefinition Width="85*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="8 12 0 0">Hardware:</TextBlock>
+                                                <ComboBox  Grid.Column="1" Grid.Row="1" x:Name="CBHardwareSend" materialDesign:HintAssist.Hint="Hardware" Margin="8 0 12 0"/>
+                                            </Grid>
+                                            <Grid Grid.Row="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="50*"/>
+                                                    <RowDefinition Height="50*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50*"/>
+                                                    <ColumnDefinition Width="50*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Button Grid.Column="0" Grid.Row="0" Name="BTSendEmployer" Background="#4682B4" Margin="5 5 5 5" ToolTip="Enviar Empregador" VerticalAlignment="Center" BorderThickness="0" Click="sendEmployer" >Enviar Empregador</Button>
+                                                <Button Grid.Column="1" Grid.Row="0" Name="BTSendEmployees" Background="#4682B4" Margin="5 5 5 5" ToolTip="Enviar Funcionários" VerticalAlignment="Center" BorderThickness="0" Click="sendEmployees" >Enviar Funcionários</Button>
+                                                <Button Grid.Column="0" Grid.Row="1" Name="BTSendMarkings" Background="#4682B4" Margin="5 5 5 5" ToolTip="Enviar Marcações" VerticalAlignment="Center" BorderThickness="0" Click="sendMarkings" >Enviar Marcações</Button>
+                                            </Grid>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem Header="Receber" Height="22" VerticalAlignment="Top">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="20*"/>
+                                                <RowDefinition Height="20*"/>
+                                                <RowDefinition Height="60*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15*"/>
+                                                    <ColumnDefinition Width="85*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="8 12 0 0">Empresa:</TextBlock>
+                                                <ComboBox  Grid.Column="1" Grid.Row="0" x:Name="CBCompanyReceive" materialDesign:HintAssist.Hint="Empresa" SelectionChanged="CBCompanyRead_SelectionChanged" Margin="8 0 12 0"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15*"/>
+                                                    <ColumnDefinition Width="85*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="8 12 0 0">Hardware:</TextBlock>
+                                                <ComboBox  Grid.Column="1" Grid.Row="1" x:Name="CBHardwareReceive" materialDesign:HintAssist.Hint="Hardware" Margin="8 0 12 0"/>
+                                            </Grid>
+                                            <Grid Grid.Row="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="50*"/>
+                                                    <RowDefinition Height="50*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50*"/>
+                                                    <ColumnDefinition Width="50*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Button Grid.Column="0" Grid.Row="0" Name="BTReadEmployers" Background="#4682B4" Margin="5 5 5 5" ToolTip="Receber Empregador" VerticalAlignment="Center" BorderThickness="0" Click="readEmployer" >Receber Empregador</Button>
+                                                <Button Grid.Column="1" Grid.Row="0" Name="BTReadEmployees" Background="#4682B4" Margin="5 5 5 5" ToolTip="Receber Funcionários" VerticalAlignment="Center" BorderThickness="0" Click="readEmployees" >Receber Funcionários</Button>
+                                                <Button Grid.Column="0" Grid.Row="1" Name="BTReadMarkings" Background="#4682B4" Margin="5 5 5 5" ToolTip="Receber Marcações" VerticalAlignment="Center" BorderThickness="0" Click="readMarkings" >Receber Marcações</Button>
+                                            </Grid>
+                                        </Grid>
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="BTCancel" Background="#C10828" Margin="0 12 8 0" Width="100" ToolTip="Cancelar" BorderThickness="0" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Cancelar
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

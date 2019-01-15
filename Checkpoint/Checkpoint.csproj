@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECA4FAB0-E145-4657-9807-D6C56D526129}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Checkpoint</RootNamespace>
+    <AssemblyName>Checkpoint</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Workspace\CheckpointPublisher\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.17.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>97CD52BEAFB9C496063EA7D26C87E1485354FA06</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Checkpoint_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.1.953, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.1.953\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.1\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Control\AbsenceControl.cs" />
+    <Compile Include="Control\BadgeRequestManagerControl.cs" />
+    <Compile Include="Control\BobbinRequestManagerControl.cs" />
+    <Compile Include="Control\ExportTaxFileControl.cs" />
+    <Compile Include="Control\HardwareConfigurationControl.cs" />
+    <Compile Include="Control\MakerControl.cs" />
+    <Compile Include="Control\OpenCallManagerControl.cs" />
+    <Compile Include="Control\AdjustmentControl.cs" />
+    <Compile Include="Control\ComunicationControl.cs" />
+    <Compile Include="Control\ConfigControl.cs" />
+    <Compile Include="Control\HardwareControl.cs" />
+    <Compile Include="Control\ImportControl.cs" />
+    <Compile Include="Control\MailControl.cs" />
+    <Compile Include="Control\MarkingControl.cs" />
+    <Compile Include="Control\RecessControl.cs" />
+    <Compile Include="Control\EmployeeControl.cs" />
+    <Compile Include="Control\JustificationControl.cs" />
+    <Compile Include="Control\ScheduleControl.cs" />
+    <Compile Include="Control\StructureControl.cs" />
+    <Compile Include="Control\ResignationReasonControl.cs" />
+    <Compile Include="Control\OfficeControl.cs" />
+    <Compile Include="Control\DepartmentControl.cs" />
+    <Compile Include="Control\CompanyControl.cs" />
+    <Compile Include="ControlSync\ISyncControl.cs" />
+    <Compile Include="ControlSync\SyncControlRWTech.cs" />
+    <Compile Include="Control\UsersControl.cs" />
+    <Compile Include="Control\UserProfilesControl.cs" />
+    <Compile Include="DAO\AbsenceDAO.cs" />
+    <Compile Include="DAO\BadgeRequestManagerDAO.cs" />
+    <Compile Include="DAO\BobbinRequestManagerDAO.cs" />
+    <Compile Include="DAO\ExportTaxFileDAO.cs" />
+    <Compile Include="DAO\HardwareConfigurationDAO.cs" />
+    <Compile Include="DAO\MakerDAO.cs" />
+    <Compile Include="DAO\OpenCallManagerDAO.cs" />
+    <Compile Include="DAO\AdjustmentDAO.cs" />
+    <Compile Include="DAO\CompanyDAO.cs" />
+    <Compile Include="DAO\DepartmentDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\HardwareDAO.cs" />
+    <Compile Include="DAO\JustificationDAO.cs" />
+    <Compile Include="DAO\MarkingDAO.cs" />
+    <Compile Include="DAO\OfficeDAO.cs" />
+    <Compile Include="DAO\RecessDAO.cs" />
+    <Compile Include="DAO\ResignationReasonDAO.cs" />
+    <Compile Include="DAO\ScheduleDAO.cs" />
+    <Compile Include="DAO\StructureDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\UserProfileDAO.cs" />
+    <Compile Include="Message\AddJustificationMessageDialog.xaml.cs">
+      <DependentUpon>AddJustificationMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\OptionMessageDialog.xaml.cs">
+      <DependentUpon>OptionMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\SampleMessageDialog.xaml.cs">
+      <DependentUpon>SampleMessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Absence.cs" />
+    <Compile Include="Model\BadgeRequestManager.cs" />
+    <Compile Include="Model\BobbinRequestManager.cs" />
+    <Compile Include="Model\Digital.cs" />
+    <Compile Include="Model\HardwareConfiguration.cs" />
+    <Compile Include="Model\MailManager.cs" />
+    <Compile Include="Model\Adjustment.cs" />
+    <Compile Include="Model\Company.cs" />
+    <Compile Include="Model\Email.cs" />
+    <Compile Include="Model\Hardware.cs" />
+    <Compile Include="Model\Comunication.cs" />
+    <Compile Include="Model\DailyMarking.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Justification.cs" />
+    <Compile Include="Model\Maker.cs" />
+    <Compile Include="Model\Marking.cs" />
+    <Compile Include="Model\Office.cs" />
+    <Compile Include="Model\OpenCallManager.cs" />
+    <Compile Include="Model\Recess.cs" />
+    <Compile Include="Model\RejectedMarking.cs" />
+    <Compile Include="Model\ResignationReason.cs" />
+    <Compile Include="Model\Schedule.cs" />
+    <Compile Include="Model\ScheduleDay.cs" />
+    <Compile Include="Model\Structure.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserProfile.cs" />
+    <Compile Include="RWIntegration\Commands\Command.cs" />
+    <Compile Include="RWIntegration\Commands\CommandDeleteEmployee.cs" />
+    <Compile Include="RWIntegration\Commands\CommandReadEmployees.cs" />
+    <Compile Include="RWIntegration\Commands\CommandReadEmployer.cs" />
+    <Compile Include="RWIntegration\Commands\CommandReadMarkings.cs" />
+    <Compile Include="RWIntegration\Commands\CommandSendEmployees.cs" />
+    <Compile Include="RWIntegration\Commands\CommandSendEmployer.cs" />
+    <Compile Include="RWIntegration\Commands\CommandSendFingerPrints.cs" />
+    <Compile Include="RWIntegration\Connection\Tcp.cs" />
+    <Compile Include="RWIntegration\Util\AES.cs" />
+    <Compile Include="RWIntegration\Util\CommandCodes.cs" />
+    <Compile Include="RWIntegration\Util\Conversor.cs" />
+    <Compile Include="RWIntegration\Util\ErrorCommand.cs" />
+    <Compile Include="RWIntegration\Util\Protocol.cs" />
+    <Compile Include="RWIntegration\Util\ProtocolUtils.cs" />
+    <Compile Include="Service References\WSCorreios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BackupManager.cs" />
+    <Compile Include="Tools\CookieAwareWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\DBConnection.cs" />
+    <Compile Include="Tools\Formatter.cs" />
+    <Compile Include="Tools\Inspector.cs" />
+    <Compile Include="Tools\PointNull.cs" />
+    <Compile Include="Tools\MarkingUtil.cs" />
+    <Compile Include="Tools\SearchCNPJ.cs" />
+    <Compile Include="Tools\Util.cs" />
+    <Compile Include="ViewControl\AbsenceViewControl.cs" />
+    <Compile Include="ViewControl\AddJustificationViewControl.cs" />
+    <Compile Include="ViewControl\DailyPointViewControl.cs" />
+    <Compile Include="ViewControl\HardwareConfigurationViewControl.cs" />
+    <Compile Include="ViewControl\ImportEmployeesViewControl.cs" />
+    <Compile Include="ViewControl\MailsManagerViewControl.cs" />
+    <Compile Include="ViewControl\AdjustmentViewControl.cs" />
+    <Compile Include="ViewControl\EmployeeViewControl.cs" />
+    <Compile Include="ViewControl\HardwareViewControl.cs" />
+    <Compile Include="ViewControl\MarkingCardViewControl.cs" />
+    <Compile Include="ViewControl\OpenCallViewControl.cs" />
+    <Compile Include="ViewControl\RecessViewControl.cs" />
+    <Compile Include="ViewControl\JustificationViewControl.cs" />
+    <Compile Include="ViewControl\ResignationReasonViewControl.cs" />
+    <Compile Include="ViewControl\OfficeViewControl.cs" />
+    <Compile Include="ViewControl\DepartmentViewControl.cs" />
+    <Compile Include="Tools\NotSelectedValidationRule.cs" />
+    <Compile Include="Tools\NotEmptyValidationRule.cs" />
+    <Compile Include="ViewControl\ScheduleViewControl.cs" />
+    <Compile Include="ViewControl\ComunicationViewControl.cs" />
+    <Compile Include="ViewControl\UserProfileViewControl.cs" />
+    <Compile Include="ViewControl\UserViewControl.cs" />
+    <Compile Include="ViewModal\AboutModal.xaml.cs">
+      <DependentUpon>AboutModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\AdjustmentModal.xaml.cs">
+      <DependentUpon>AdjustmentModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\BackupModal.xaml.cs">
+      <DependentUpon>BackupModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\ExportTaxFilesModal.xaml.cs">
+      <DependentUpon>ExportTaxFilesModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\ImportEmployeeModal.xaml.cs">
+      <DependentUpon>ImportEmployeeModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\MailsManagerModal.xaml.cs">
+      <DependentUpon>MailsManagerModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\OpenCallModal.xaml.cs">
+      <DependentUpon>OpenCallModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\SearchCNPJModal.xaml.cs">
+      <DependentUpon>SearchCNPJModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AbsenceRegisterView.xaml.cs">
+      <DependentUpon>AbsenceRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\AFDImportModal.xaml.cs">
+      <DependentUpon>AFDImportModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompanyRegisterView.xaml.cs">
+      <DependentUpon>CompanyRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControl\CompanyViewControl.cs" />
+    <Compile Include="View\DailyPointView.xaml.cs">
+      <DependentUpon>DailyPointView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentRegisterView.xaml.cs">
+      <DependentUpon>DepartmentRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeRegisterView.xaml.cs">
+      <DependentUpon>EmployeeRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeReportView.xaml.cs">
+      <DependentUpon>EmployeeReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HardwareRegisterView.xaml.cs">
+      <DependentUpon>HardwareRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HardwareConfigurationView.xaml.cs">
+      <DependentUpon>HardwareConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\JustificationRegisterView.xaml.cs">
+      <DependentUpon>JustificationRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MarkingCardView.xaml.cs">
+      <DependentUpon>MarkingCardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\NewAbsenceModal.xaml.cs">
+      <DependentUpon>NewAbsenceModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\NewOfficeModal.xaml.cs">
+      <DependentUpon>NewOfficeModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\NewDepartmentModal.xaml.cs">
+      <DependentUpon>NewDepartmentModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewResignationReasonModal.xaml.cs">
+      <DependentUpon>NewResignationReasonModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OfficeRegisterView.xaml.cs">
+      <DependentUpon>OfficeRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecessRegisterView.xaml.cs">
+      <DependentUpon>RecessRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ResignationReasonRegisterView.xaml.cs">
+      <DependentUpon>ResignationReasonRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScheduleRegisterView.xaml.cs">
+      <DependentUpon>ScheduleRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StructureRegisterView.xaml.cs">
+      <DependentUpon>StructureRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\ComunicationControllerModal.xaml.cs">
+      <DependentUpon>ComunicationControllerModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModal\SyncModal.xaml.cs">
+      <DependentUpon>SyncModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserProfileRegisterView.xaml.cs">
+      <DependentUpon>UserProfileRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserRegisterView.xaml.cs">
+      <DependentUpon>UserRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\NotifyPropertyChangedExtension.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Message\AddJustificationMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\OptionMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Message\SampleMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\AboutModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\AdjustmentModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\BackupModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\ExportTaxFilesModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\ImportEmployeeModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\MailsManagerModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\OpenCallModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\SearchCNPJModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AbsenceRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\AFDImportModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompanyRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DailyPointView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DepartmentRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EmployeeRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EmployeeReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HardwareRegisterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HardwareConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\JustificationRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MarkingCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\NewAbsenceModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\NewOfficeModal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModal\NewDepartmentModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewResignationReasonModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OfficeRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecessRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ResignationReasonRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ScheduleRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StructureRegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\ComunicationControllerModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModal\SyncModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserProfileRegisterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserRegisterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Checkpoint_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\WSCorreios\AtendeClienteService.wsdl" />
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.assuntoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.consultarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.mensagemRetornoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.motivoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.obterAssuntosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.obterMensagemRetornoPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.obterMotivosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.registrarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.retorno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Checkpoint.WSCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ms-icon-310x310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Checkpoint.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSCorreios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSCorreios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSCorreios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WSCorreios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POKDB.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

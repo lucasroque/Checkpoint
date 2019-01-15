@@ -1,0 +1,167 @@
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\PontoOK.exe.config
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\PontoOK.exe
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\PontoOK.pdb
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.csprojResolveAssemblyReference.cache
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\App.g.cs
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK_MarkupCompile.cache
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK_MarkupCompile.lref
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.g.resources
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.Properties.Resources.resources
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.csproj.GenerateResource.Cache
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.exe
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\PontoOK.pdb
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\MaterialDesignColors.dll
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.dll
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.pdb
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.xml
+c:\users\isi hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\App.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\MainWindow.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\MainWindow.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\Home.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\Home.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\CompanyRegisterView.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\EmployeeRegisterView.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\ScheduleRegisterView.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\CompanyRegisterView.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\EmployeeRegisterView.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\ScheduleRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\OfficeRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\OfficeRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\DepartmentRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\DepartmentRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\ResignationReasonRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\ResignationReasonRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\StructureRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\RecessRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\StructureRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\RecessRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\Message\SampleMessageDialog.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\Message\SampleMessageDialog.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\Message\OptionMessageDialog.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\Message\OptionMessageDialog.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewDepartmentModal.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewDepartmentModal.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewOfficeModal.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewOfficeModal.baml
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewResignationReasonModal.g.cs
+C:\Users\Isi Hellen\Documents\Visual Studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewResignationReasonModal.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\JustificationRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\JustificationRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\DailyPointView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\DailyPointView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\MarkingCardView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\MarkingCardView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\SyncControllerModalView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\SyncControllerModalView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\EmployeeReportView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\EmployeeReportView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewAbsenceModal.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\NewAbsenceModal.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\AbsenceRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\HardwareRegisterView.g.cs
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\AbsenceRegisterView.baml
+C:\Users\Isi Hellen\documents\visual studio 2015\Projects\PontoOK\PontoOK\obj\Debug\View\HardwareRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\PontoOK.exe.config
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.exe
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.pdb
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\PontoOK.exe
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\PontoOK.pdb
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\MaterialDesignColors.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.csprojResolveAssemblyReference.cache
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\MainWindow.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\Message\OptionMessageDialog.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\Message\SampleMessageDialog.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\AbsenceRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\CompanyRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\DailyPointView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\DepartmentRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\EmployeeRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\EmployeeReportView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\HardwareRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\Home.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\JustificationRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\MarkingCardView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewAbsenceModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewOfficeModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewDepartmentModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewResignationReasonModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\OfficeRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\RecessRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ResignationReasonRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ScheduleRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\StructureRegisterView.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\App.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK_MarkupCompile.cache
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK_MarkupCompile.lref
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\App.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\MainWindow.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\Message\OptionMessageDialog.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\Message\SampleMessageDialog.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\AbsenceRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\CompanyRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\DailyPointView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\DepartmentRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\EmployeeRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\EmployeeReportView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\HardwareRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\Home.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\JustificationRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\MarkingCardView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewAbsenceModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewOfficeModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewDepartmentModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\NewResignationReasonModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\OfficeRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\RecessRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ResignationReasonRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ScheduleRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\StructureRegisterView.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.g.resources
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.Properties.Resources.resources
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\PontoOK.csproj.GenerateResource.Cache
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\AFDImportModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ComunicationControllerModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\SyncModal.g.cs
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\AFDImportModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\ComunicationControllerModal.baml
+C:\Worckspace\PontoOk\PontoOK\obj\Debug\View\SyncModal.baml
+C:\Worckspace\Checkpoint\PontoOK\bin\Debug\PontoOK.exe.config
+C:\Worckspace\Checkpoint\PontoOK\obj\Debug\PontoOK.exe
+C:\Worckspace\Checkpoint\PontoOK\obj\Debug\PontoOK.pdb

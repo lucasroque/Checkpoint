@@ -1,0 +1,202 @@
+﻿<UserControl x:Class="Checkpoint.View.HardwareConfigurationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="16" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Configuração de Equipamentos</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="70*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Column="0" Grid.Row="0" BorderBrush="#D3D3D3" Height="100" VerticalAlignment="Bottom" CornerRadius="8,8,8,8" BorderThickness="3" Margin="0 0 0 16">
+                        <Image Name="imgHardwareConfigurationPhoto" Stretch="Fill"/>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="75*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 12">Empresa:</TextBlock>
+                    <ComboBox  Grid.Column="2" Grid.Row="0" x:Name="CBCompany" materialDesign:HintAssist.Hint="Empresa" Margin="0 0 0 12">
+                        <ComboBox.SelectedIndex>
+                            <Binding Path="CBCompany" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </ComboBox.SelectedIndex>
+                    </ComboBox>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 8 0 8">Equipamento:</TextBlock>
+                    <ComboBox  Grid.Column="2" Grid.Row="1" x:Name="CBHardware" materialDesign:HintAssist.Hint="Equipamento" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBox.SelectedIndex>
+                            <Binding Path="CBHardware" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </ComboBox.SelectedIndex>
+                    </ComboBox>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Chave Criptográfica:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBCryptographicKey" materialDesign:HintAssist.Hint="Chave Criptográfica do Hardware">
+                        <Binding Path="TBCryptographicKey" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Número Serial:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="3" x:Name="TBSerialNumber" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Número Serial do Equipamento">
+                        <Binding Path="TBSerialNumber" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Modelo:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="4" x:Name="TBModel" materialDesign:HintAssist.Hint="Modelo do Equipamento"/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Versão:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="5" x:Name="TBVersion" materialDesign:HintAssist.Hint="Versão do Equipamento"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Porta:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="6" x:Name="TBPort" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Porta para Comunicação">
+                        <Binding Path="TBPort" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" Grid.Row="7" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Ip:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="7" x:Name="TBIp" PreviewTextInput="NumberValidationTextBox" materialDesign:HintAssist.Hint="Ip para Comunicação">
+                        <Binding Path="TBIp" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                    <TextBlock Grid.Column="0" Grid.Row="8" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0 12 0 12">Cpf:</TextBlock>
+                    <TextBox Grid.Column="2" Grid.Row="8" x:Name="TBCpf" PreviewTextInput="NumberValidationTextBox" MaxLength="11" materialDesign:HintAssist.Hint="CPF Responsável pela Comunicação">
+                        <Binding Path="TBCpf" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="20*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Name="BTSave" Background="#3CB371" Margin="0 12 8 0" Width="100" ToolTip="Salvar Hardware" BorderThickness="0" Click="upsertHardwareConfiguration">
+                        SALVAR
+                    </Button>
+                    <Button Grid.Column="1" Name="BTEdit" IsEnabled="False" Background="#4682B4" Margin="0 12 8 0" Width="100" ToolTip="Alterar Hardware" BorderThickness="0" Click="upsertHardwareConfiguration">
+                        ALTERAR
+                    </Button>
+                    <Button Grid.Column="2" Name="BTClean" Background="#FF4500" Margin="0 12 8 0" Width="100" ToolTip="Limpar Campos" BorderThickness="0" Click="cleanControls">
+                        LIMPAR
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="3">
+                <Expander HorizontalAlignment="Stretch" Header="Lista de Configurações">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="80*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Grid.Row="0" x:Name="TBFilter" Text="{Binding TBFilter, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 0 0" materialDesign:HintAssist.Hint="Filtro"  Style="{StaticResource MaterialDesignTextAreaTextBox}" />
+                        </Grid>
+                        <DataGrid Grid.Row="1" x:Name="GDHardwareConfiguration" IsReadOnly="true" Margin="0 25 0 0" ItemsSource="{Binding HardwareConfigurationList}" CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                              materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="2" >
+                            <DataGrid.Columns>
+                                <materialDesign:MaterialDataGridTextColumn Width="20*" Binding="{Binding company}" Header="Empresa" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="20*" Binding="{Binding hardware}" Header="Equipamento" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="20*" Binding="{Binding serialNumber}" Header="Númedo Serial" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="15*" Binding="{Binding model}" Header="Modelo" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="10*" Binding="{Binding port}" Header="Porta" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <materialDesign:MaterialDataGridTextColumn Width="15*" Binding="{Binding ip}" Header="Ip" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}"/>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btEdit" Background="#4682B4" BorderThickness="0" Content="{materialDesign:PackIcon Pencil}" ToolTip="Editar" Click="loadHardwareConfiguration"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Name="btDelete" Background="#C10828" BorderThickness="0" Content="{materialDesign:PackIcon Delete}" ToolTip="Excluir" Click="deleteHardwareConfiguration"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Expander>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

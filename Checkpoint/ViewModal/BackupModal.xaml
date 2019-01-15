@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Checkpoint.ViewModal.BackupModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.ViewModal"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="600" Height="400"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid Margin="5" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:DialogHost Grid.Row="0" Name="DHModal" Identifier="DHModal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        </materialDesign:DialogHost>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="16" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0 0 0 0">Gerenciamento de Backup</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <Expander HorizontalAlignment="Stretch" Header="Efetuar Backup" IsExpanded="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Background="White" Margin="5 0 0 0" MaxHeight="30" CornerRadius="3" BorderThickness="2" BorderBrush="#DCDCDC">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Grid.Column="1" Margin="5 0 0 0" materialDesign:HintAssist.Hint="Caminho" x:Name="TBPathFolder" IsEnabled="False" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" />
+                                </Grid>
+                            </Border>
+                            <Button Grid.Column="1" Name="BTSearchFolder" Background="#4682B4" Margin="5 5 5 5" ToolTip="Buscar" VerticalAlignment="Center" BorderThickness="0" Click="loadBackupFolder" >Buscar</Button>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25*"/>
+                                <ColumnDefinition Width="75*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Name="BTMakeBackup" Background="#3CB371" Margin="5 5 5 5" ToolTip="Importar" BorderThickness="0" Click="makeBackup">Efetuar Backup</Button>
+                        </Grid>
+                    </Grid>
+                </Expander>
+                <Expander HorizontalAlignment="Stretch" Header="Carregar Backup">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Background="White" Margin="5 0 0 0" MaxHeight="30" CornerRadius="3" BorderThickness="2" BorderBrush="#DCDCDC">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox Grid.Column="1" Margin="5 0 0 0" materialDesign:HintAssist.Hint="Caminho" x:Name="TBPathFile" IsEnabled="False" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" MinWidth="200" VerticalAlignment="Center" />
+                                </Grid>
+                            </Border>
+                            <Button Grid.Column="1" Name="BTSearch" Background="#4682B4" Margin="5 5 5 5" ToolTip="Buscar" VerticalAlignment="Center" BorderThickness="0" Click="loadBackupFile" >Buscar</Button>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="25*"/>
+                                <ColumnDefinition Width="75*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Name="BTLoadBackup" Background="#3CB371" Margin="5 5 5 5" ToolTip="Importar" BorderThickness="0" Click="loadBackup">Carregar Backup</Button>
+                        </Grid>
+                    </Grid>
+                </Expander>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="236*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="BTCancel" Background="#C10828" Margin="5,20,1,7" Width="100" ToolTip="Cancelar" BorderThickness="0" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Sair
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

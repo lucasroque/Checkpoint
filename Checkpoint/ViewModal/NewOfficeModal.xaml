@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Checkpoint.ViewModal.NewOfficeModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="600" Height="200"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid Margin="16" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel>
+                <TextBlock>Novo Cargo:</TextBlock>
+                <TextBox x:Name="TBDescription" materialDesign:HintAssist.Hint="Descrição do Cargo" Margin="0 14 0 14">
+                    <Binding Path="TBDescription" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button IsDefault="True" Style="{DynamicResource MaterialDesignFlatButton}"
+                    Command="{x:Static wpf:DialogHost.CloseDialogCommand}" Click="insertOffice">
+                <Button.CommandParameter>
+                    <system:Boolean>True</system:Boolean>
+                </Button.CommandParameter>
+                Salvar
+            </Button>
+            <Button IsCancel="True" Margin="8 0 0 0" Style="{DynamicResource MaterialDesignFlatButton}"
+                    Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Cancelar
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

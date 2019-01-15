@@ -1,0 +1,172 @@
+﻿<Window x:Class="Checkpoint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Checkpoint"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowState="Maximized"
+        Title="Checkpoint">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu IsMainMenu="True" DockPanel.Dock="Top" Background="#2461A9" Foreground="White">
+
+            <MenuItem Header="_Home" Click="menuItemHome_OnClick"/>
+            <MenuItem Header="_Cadastros">
+                <MenuItem Header="Empresa" Click="menuItemRegisterCompany_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="HomeModern" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Horário" Click="menuItemRegisterSchedule_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Clock" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Funcionário" Click="menuItemRegisterEmployee_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Account" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Departamento" Click="menuItemRegisterDepartment_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Cargo" Click="menuItemRegisterOffice_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Feriado" Click="menuItemRegisterRecess_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Justificativa" Click="menuItemRegisterJustification_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Afastamento" Click="menuItemRegisterAbsenceOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Motivo de Demissão" Click="menuItemRegisterResignationReason_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="MenuRight" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Relatórios">
+                <MenuItem Header="Ponto Diário" Click="menuItemDailyPointOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="CalendarToday" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Cartão Ponto" Click="menuItemMarkingCardOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Calendar" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Funcionários" Click="menuItemReportEmployeeOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="AccountMultiple" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Arquivos Fiscais" Click="showExportTaxFilesModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="FileExport" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Serviços">
+                <MenuItem Header="Sincronismo" Click="showSyncModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Sync" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Importar AFD" Click="showAFDImportModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="FileImport" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Importar Empregados" Click="showImportEmployeeModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="AccountMultiplePlus" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Configurações">
+                <MenuItem Header="Usuário" Click="menuItemUserRegisterView_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="AccountPlus" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Ajustes" Click="showAdjustmentModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Wrench" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Equipamento" Click="menuItemConfigurationHardwareOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Fingerprint" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Efetuar Backup" Click="menuItemConfigurationBackup_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="DatabasePlus" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Root">
+                <MenuItem Header="Equipamento" Click="menuItemRegisterHardwareOnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Fingerprint" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Perfis de Usuário" Click="menuItemUserProfileRegisterView_OnClick">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="AccountSettings" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Email" Click="showMailsManagerModal">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Wrench" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ContentControl x:Name="mainControl" Grid.Row="1"/>
+
+        <materialDesign:DialogHost Grid.Row="1" Name="DHMain" Identifier="DHMain"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        </materialDesign:DialogHost>
+
+        <StatusBar Grid.Row="2" DockPanel.Dock="Bottom">
+            <StatusBarItem Background="#2461A9" Foreground="White">
+                <TextBlock Name="lblCursorPosition" />
+            </StatusBarItem>
+        </StatusBar>
+
+    </Grid>
+   
+</Window>

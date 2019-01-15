@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Checkpoint.Message.AddJustificationMessageDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.Message"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:model="clr-namespace:Checkpoint.Model"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="200
+             " d:DesignWidth="300">
+    <Grid Margin="16" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel>
+                <TextBlock>Justificativa de Alteração:</TextBlock>
+                <ComboBox  x:Name="CBJustification" materialDesign:HintAssist.Hint="Justificativa" Margin="0 6 0 14">
+                    <ComboBox.SelectedIndex>
+                        <Binding Path="CBJustification" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <tools:NotSelectedValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </ComboBox.SelectedIndex>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Button IsDefault="True" Style="{DynamicResource MaterialDesignFlatButton}" CommandParameter="{Binding ElementName=CBJustification,Path=SelectedItem}" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                Salvar
+            </Button>
+            <Button IsCancel="True" Margin="8 0 0 0" Style="{DynamicResource MaterialDesignFlatButton}" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                Cancelar
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

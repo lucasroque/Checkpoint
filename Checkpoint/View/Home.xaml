@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="Checkpoint.View.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Green.Named.Primary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="16">
+            <Image Source="/Resources/ms-icon-310x310.png" Stretch="Uniform" Width="100" Height="100" />
+            <StackPanel Grid.Column="1" Margin="24 0 0 0" VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap">Bem-Vindo ao Checkpoint!</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 0 0 8">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Width="200" Margin="12 0 0 0" Height="500" Header="Menu Rápido" Style="{DynamicResource MaterialDesignCardGroupBox}">
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Menu" Height="32" Width="32" VerticalAlignment="Center" />
+                                    <TextBlock Margin="8,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <Grid VerticalAlignment="Stretch" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" Grid.Row="0" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btCompany" Click="menuItemRegisterCompany_OnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="HomeModern" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Empresa</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="1" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btSchedule" Click="menuItemRegisterSchedule_OnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Clock" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Horário</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="2" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btEmployee" Click="menuItemRegisterEmployee_OnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Account" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Funcionário</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="3" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btDailyPoint" Click="menuItemDailyPointOnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="CalendarToday" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Ponto Diário</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="4" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btMarkingCard" Click="menuItemMarkingCardOnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Calendar" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Cartão Ponto</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="5" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btSync" Click="showSyncModal">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Sync" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Sincronismo</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="6" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btImportAfd" Click="showAFDImportModal">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="FileImport" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Importar AFD</TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="0" Grid.Row="7" Margin="0 12 0 0" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#2461A9" BorderBrush="#2461A9" Width="180" Height="40" materialDesign:ShadowAssist.ShadowDepth="Depth3" HorizontalAlignment="Left" x:Name="btBackup" Click="menuItemConfigurationBackup_OnClick">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="DatabasePlus" />
+                                    <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Efetuar Backup</TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <materialDesign:PopupBox Style="{StaticResource MaterialDesignMultiFloatingActionPopupBox}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#7B68EE" BorderBrush="#7B68EE" Margin="32" Grid.Row="1">
+            <StackPanel>
+                <Button ToolTip="Abrir Chamado" Click="OpenCall_OnClick" Background="#B0C4DE" BorderBrush="#B0C4DE" Foreground="White">
+                    <materialDesign:PackIcon Kind="Phone" />
+                </Button>
+                <Button ToolTip="Solicitar Bobina" Click="BobbinRequest_OnClick" Background="#2E8B57" BorderBrush="#2E8B57" Foreground="White">
+                    <materialDesign:PackIcon Kind="Database" />
+                </Button>
+                <Button ToolTip="Solicitar Crachá" Click="BadgeRequest_OnClick" Background="#B22222" BorderBrush="#B22222" Foreground="White">
+                    <materialDesign:PackIcon Kind="AccountBox" />
+                </Button>
+                <Button ToolTip="Sobre" Click="InfoButton_OnClick" Background="#DAA520" BorderBrush="#DAA520" Foreground="White">
+                    <materialDesign:PackIcon Kind="Information" />
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+    </Grid>
+</UserControl>

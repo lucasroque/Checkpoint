@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="Checkpoint.ViewModal.MailsManagerModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.ViewModal"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="700" Height="400"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="1200" d:DesignWidth="600" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource MaterialDesignPasswordBox}">
+            <Setter Property="Margin" Value="0 8 0 8" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="16" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:DialogHost Grid.Row="0" Name="DHModal" Identifier="DHModal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+        </materialDesign:DialogHost>
+        <Grid Grid.Row="1">
+            <materialDesign:ColorZone Background="#4E89C4" Foreground="White" Padding="12" CornerRadius="3" materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0">Configurações</TextBlock>
+                </StackPanel>
+            </materialDesign:ColorZone>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="#DCDCDC" CornerRadius="3" Margin="5 5 5 5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Column="0" Background="White" Margin="5 5 5 5" CornerRadius="3" BorderThickness="2" BorderBrush="White">
+                            <Grid>
+                                <TabControl>
+                                    <TabItem Header="Abertura de Chamado">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="10*"/>
+                                                <ColumnDefinition Width="90*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0" >Usuário:</TextBlock>
+                                            <TextBox Grid.Column="1" Grid.Row="0" x:Name="TBCallOpenUser" materialDesign:HintAssist.Hint="Usuário para Abertura de Chamado" Margin="0 0 0 18">
+                                                <Binding Path="TBCallOpenUser" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Senha:</TextBlock>
+                                            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="TBCallOpenPassword" materialDesign:HintAssist.Hint="Senha para Abertura de Chamado" Margin="0 0 0 18"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Host:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBCallOpenHost" materialDesign:HintAssist.Hint="Host Abertura de Chamado" Margin="0 0 0 18">
+                                                <Binding Path="TBCallOpenHost" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Porta:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="3" x:Name="TBCallOpenPort" materialDesign:HintAssist.Hint="Porta Abertura de Chamado" Margin="0 0 0 18">
+                                                <Binding Path="TBCallOpenPort" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem Header="Solicitação de Bobina">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="10*"/>
+                                                <ColumnDefinition Width="90*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0" >Usuário:</TextBlock>
+                                            <TextBox Grid.Column="1" Grid.Row="0" x:Name="TBBobbinRequestUser" materialDesign:HintAssist.Hint="Usuário para Solicitação de Bobina" Margin="0 0 0 18">
+                                                <Binding Path="TBBobbinRequestUser" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Senha:</TextBlock>
+                                            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="TBBobbinRequestPassword" materialDesign:HintAssist.Hint="Senha para Solicitação de Bobina" Margin="0 0 0 18"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Host:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBBobbinRequestHost" materialDesign:HintAssist.Hint="Host Solicitação de Bobina" Margin="0 0 0 18">
+                                                <Binding Path="TBBobbinRequestHost" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Porta:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="3" x:Name="TBBobbinRequestPort" materialDesign:HintAssist.Hint="Porta Solicitação de Bobina" Margin="0 0 0 18">
+                                                <Binding Path="TBBobbinRequestPort" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem Header="Solicitação de Crachá">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                                <RowDefinition Height="25*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="10*"/>
+                                                <ColumnDefinition Width="90*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0" >Usuário:</TextBlock>
+                                            <TextBox Grid.Column="1" Grid.Row="0" x:Name="TBBadgeRequestUser" materialDesign:HintAssist.Hint="Usuário para Solicitação de Crachá" Margin="0 0 0 18">
+                                                <Binding Path="TBBadgeRequestUser" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Senha:</TextBlock>
+                                            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="TBBadgeRequestPassword" materialDesign:HintAssist.Hint="Senha para Solicitação de Crachá" Margin="0 0 0 18"/>
+                                            <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Host:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="2" x:Name="TBBadgeRequestHost" materialDesign:HintAssist.Hint="Host Solicitação de Crachá" Margin="0 0 0 18">
+                                                <Binding Path="TBBadgeRequestHost" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                            <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 12 0 0">Porta:</TextBlock>
+                                            <TextBox Grid.Column="2" Grid.Row="3" x:Name="TBBadgeRequestPort" materialDesign:HintAssist.Hint="Porta Solicitação de Crachá" Margin="0 0 0 18">
+                                                <Binding Path="TBBadgeRequestPort" UpdateSourceTrigger="PropertyChanged">
+                                                    <Binding.ValidationRules>
+                                                        <tools:NotEmptyValidationRule ValidatesOnTargetUpdated="True" />
+                                                    </Binding.ValidationRules>
+                                                </Binding>
+                                            </TextBox>
+                                        </Grid>
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button IsDefault="True" Grid.Column="0" Background="#3CB371" Margin="0 12 8 0" Width="100" ToolTip="Salvar" BorderThickness="0" Click="saveManagers">
+                <Button.CommandParameter>
+                    <system:Boolean>True</system:Boolean>
+                </Button.CommandParameter>
+                Salvar
+            </Button>
+            <Button IsCancel="True" Grid.Column="1" Background="#C10828" Margin="0 12 8 0" Width="100" ToolTip="Cancelar" BorderThickness="0" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Cancelar
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

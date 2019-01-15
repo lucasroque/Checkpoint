@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Checkpoint.ViewModal.AboutModal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Checkpoint.ViewModal"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:tools="clr-namespace:Checkpoint.Tools"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Width="330" Height="350"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             d:DesignHeight="1000" d:DesignWidth="600">
+    <Grid Margin="10" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Border Background="#DCDCDC" CornerRadius="3" Margin="5 5 5 5" MaxHeight="320">
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="/Resources/ms-icon-310x310.png" Margin="0 5 0 0" Stretch="Uniform" Width="100" Height="100" />
+                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 5 0 0" FontSize="14" FontWeight="Bold">Checkpoint</TextBlock>
+                    <TextBlock Grid.Row="2" Style="{StaticResource MaterialDesignBody2TextBlock}" Name="TBVersion" Margin="5 5 0 0" FontSize="10">Versão: 1.0</TextBlock>
+                    <TextBlock Grid.Row="3" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 10 0 0">Seu Canal de Atendimento:</TextBlock>
+                    <TextBlock Grid.Row="4" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 5 0 0" FontSize="14" FontWeight="Bold">Digital Ponto Com</TextBlock>
+                    <TextBlock Grid.Row="5" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 0 0 0" FontSize="10">
+                        <Hyperlink Foreground="#4169E1" NavigateUri="www.digitalpontocom.com">www.digitalpontocom.com</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="6" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 5 0 0" FontSize="10">R260, 16 Qd. 11 Lt. 18 Loja 1</TextBlock>
+                    <TextBlock Grid.Row="7" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 5 0 0" FontSize="10">Goiânia - GO - CEP: 74533-030</TextBlock>
+                    <TextBlock Grid.Row="8" Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="5 5 0 0" FontSize="10">Fone: 62 3291-5000</TextBlock>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="BTCancel" Background="#4682B4" Margin="5 0 0 0" Width="100" ToolTip="OK" BorderThickness="0" HorizontalAlignment="Left" Command="{x:Static wpf:DialogHost.CloseDialogCommand}">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                Ok
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>
